@@ -1,0 +1,3 @@
+== More images
+
+image::screenshot.png[]

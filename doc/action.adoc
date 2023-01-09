@@ -1,0 +1,65 @@
+== Documentation upload action
+This action uploads asciidoc documentationfrom the repository into confluence.
+To make the action run pandoc is needed.
+
+=== Configuration file
+The repository which provides the documentation to be uploaded
+must have a configuration file.
+This file defines which asciidoc document should be uploaded and where.
+
+
+.example config
+[source,json]
+----
+[
+    {                                  <1>
+        "fileName": "doc/index.adoc",  <2>
+        "dev": {                       <3>
+            "pageId": "1992491009"     <4>
+        },
+        "uat": {
+            "pageId": "1992491234"
+        },
+        "prd": {
+            "pageId": "1998356485"
+        }
+    }
+]
+----
+<1> The configuration file could hold different configurations for multiple files. Also the same file could be published to different locations.
+<2> The documentation file which should be uploaded.
+<3> It is possible to defined different stages. So with each stage it could be deployed to different locations in confluence.
+So the documentation could be checked before it is deployed to the production location.
+<4> The page in confluence needs to be created manually upfront. Then the upload will update the page each time. This allows the user to use the full confluence functionality for
+page orchestration.
+
+=== Example of a Github workflow action
+Place the code in a 'xyz.yml' file in your '.github/workflows' folder.
+
+[source,yml]
+----
+name: Upload Documentation to Confluence
+on:
+  push:
+    branches:
+      - main
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3             <1>
+      - uses: onrunning/cil-action-upload-doc-to-confluence@main <2>
+        with:
+          confluence_user: 'myUserName'       <3>
+          confluence_password: 'mySecret'     <4>
+          target: 'dev'                       <5>
+          config_file: 'doc/config.json'      <6>
+          build_directory: 'buildDoc'         <7>
+----
+<1> This checks out the repository.
+<2> The call of the documentation action.
+<3> The user to connect to confluence.
+<4> The password for the user.
+<5> The target (dev|uat|prd).
+<6> The configuration file as described above.
+<7> A name for a temporary directory to build the documentation in.

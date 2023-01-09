@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "DocumentationConfigElement": {
+            "properties": {
+                "dev": {
+                    "description": "The idea behind different targets is that the developer can test the created documentation\nin the development phase. So problems in the documentation process could already be found\nhere.",
+                    "properties": {
+                        "pageId": {
+                            "description": "The pageId for development",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "fileName": {
+                    "description": "The name of the asciidoctor file to be published",
+                    "type": "string"
+                },
+                "prd": {
+                    "properties": {
+                        "pageId": {
+                            "description": "The production Page Id",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "pageId"
+                    ],
+                    "type": "object"
+                },
+                "uat": {
+                    "properties": {
+                        "pageId": {
+                            "description": "The uat pageId",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "fileName",
+                "prd"
+            ],
+            "type": "object"
+        }
+    },
+    "description": "Defines the configuration of one single document to be published",
+    "properties": {
+        "config": {
+            "items": {
+                "$ref": "#/definitions/DocumentationConfigElement"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "config"
+    ],
+    "type": "object"
+}
+

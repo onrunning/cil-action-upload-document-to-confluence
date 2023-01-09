@@ -1,0 +1,47 @@
+== Blocks
+
+	
+.Optional Title
+----
+*Listing* Block
+
+Use: code or file listings
+----
+
+
+.Optional Title
+[source,perl]
+----
+# *Source* block
+# Use: highlight code listings
+# (require `source-highlight` or `pygmentize`)
+use DBI;
+my $dbh = DBI->connect('...',$u,$p)
+    or die "connect: $dbh->errstr";
+----
+
+
+
+.Optional Title
+****
+*Sidebar* Block
+
+Use: sidebar notes :)
+****
+
+
+.Optional Title
+[NOTE]
+===============================
+*NOTE* Block
+
+Use: multi-paragraph notes.
+===============================
+
+.Optional Title
+[quote, cite author, cite source]
+____
+*Quote* Block
+
+Use: cite somebody
+____

@@ -1,0 +1,10 @@
+== Doc Images
+
+This document contains images:
+
+include::detail.adoc[]
+
+
+After the include we show a bigger image.
+
+image::subDir/bigger.svg[]

@@ -1,0 +1,7 @@
+=== Detail
+
+Some Text before the image
+
+image::aToB.svg[]
+
+Some Text after the image

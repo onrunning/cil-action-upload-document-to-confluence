@@ -1,0 +1,16 @@
+== The main program low
+The processor needs to know which asciidoc file should be processed. Also
+the location in confluence where to publish the genrated document.
+This information is stored in a config file.
+
+image::images/FlowOverview.svg[]
+
+. Load the config file +
+Loads the config file from the repository.
+
+. Convert document + 
+Converts the document in a markup format confluence understands.
+
+. Upload document to confluence + 
+Uploads the document and the images.
+

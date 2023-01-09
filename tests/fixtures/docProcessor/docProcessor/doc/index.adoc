@@ -1,0 +1,14 @@
+:imagesdir: images
+
+== Main Document
+
+:leveloffset: +1
+
+include::doc_images/index.adoc[]
+
+include::doc_other/index.adoc[]
+
+include::doc_tables/index.adoc[]
+
+
+:leveloffset: 11

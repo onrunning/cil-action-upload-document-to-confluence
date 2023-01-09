@@ -1,0 +1,14 @@
+== doc processor
+This processor compiles https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc] documents in a Markdown format which is
+understood by Confluence. Then the created document is uploaded
+to confluence.
+Afterwards the images used in the document are uploaded as attachments.
+
+include::action.adoc[leveloffset=+1]
+
+include::flow.adoc[]
+
+include::flowConvert.adoc[]
+
+include::flowUpload.adoc[]
+

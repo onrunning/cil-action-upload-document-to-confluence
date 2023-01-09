@@ -1,0 +1,29 @@
+[
+    {
+        "fileName": "doc/index.adoc",
+        "dev": {
+            "pageId": "0815"
+        },
+        "prd": {
+            "pageId": "4711"
+        }
+    },
+    {
+        "fileName": "doc/doc_images/index.adoc",
+        "prd": {
+            "pageId": "1234"
+        }
+    },
+    {
+        "fileName": "doc/doc_other/index.adoc",
+        "prd": {
+            "pageId": "1235"
+        }
+    },
+    {
+        "fileName": "doc/doc_tables/index.adoc",
+        "prd": {
+            "pageId": "1236"
+        }
+    }
+]

@@ -1,0 +1,39 @@
+# OS dependend
+.DS_Store
+
+# ---------------------
+# artefacts created by install
+# ---------------------
+package.json~
+npm-debug.log
+node_modules
+
+# ---------------------
+# artefacts created by build and test
+# ---------------------
+lib
+coverage
+dist
+docApi
+docTmp
+docBuild
+
+# ---------------------
+# test artefacts
+# ---------------------
+result
+tests/volatile
+tests/volatile*
+
+# ---------------------
+# other
+# ---------------------
+log
+*.js.orig
+
+# wird verwendet um umgebungsvariablen zu setzen
+.env
+
+# ---------------------
+# Zusätzliche Dateien die nicht aus dem Template stammen ab hier
+# ---------------------

@@ -1,0 +1,22 @@
+name: 'Upload documentation to Confluence'
+description: 'Uploads documentation files written in AsciiDoc to Confluence'
+inputs:
+  confluence_user:
+    description: 'The user name to connect to Confluence'
+    required: true
+  confluence_password:
+    description: 'The password for the Confluence user'
+    required: true
+  target:
+    description: 'The target environment (i.e. PROD)'
+    required: true
+  config_file:
+    description: 'The name and relative path of the config file (i.e. doc/config.json)'
+    required: true
+  build_directory:
+    description: 'The name for a temporary build directory'
+    required: true
+runs:
+  using: 'node16'
+  main: './action/index.js'
+

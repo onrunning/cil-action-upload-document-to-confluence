@@ -1,0 +1,11 @@
+[
+    {
+        "fileName": "tests/fixtures/docProcessor/docProcessor/doc/index.adoc",
+        "dev": {
+            "pageId": "1992491009"
+        },
+        "prd": {
+            "pageId": "1998356485"
+        }
+    }    
+]

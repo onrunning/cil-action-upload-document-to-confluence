@@ -1,0 +1,53 @@
+{
+  "name": "@onrunning/cil-action-upload-document-to-confluence",
+  "version": "0.0.0-semantic-version",
+  "description": "",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "npm run format && npm run lint && rimraf dist && tsc && depcheck",
+    "build:debug": "npm run format && npm run lint && rimraf dist && tsc --sourceMap true",
+    "buildDebug": "npm run format && npm run lint && rimraf dist && tsc --sourceMap true",
+    "createSchema": "npx typescript-json-schema --required  src/docProcessor/schema/configFileInterface.ts DocumentationConfig > src/docProcessor/schema/configFileSchema.json",
+    "debug": "npm run build:debug && node -r ts-node/register --inspect-brk ./node_modules/.bin/jest -i --config=./jest.config.js",
+    "doc": "npm run docHelp && npm run docPdf && npm run docDocbook && npm run doc2md && npm run docApi && npx on-scripts-lib replaceImageLinks",
+    "doc2md": "pandoc -f docbook -t markdown_strict docTmp/index.xml -o README.md",
+    "docApi": "npx typedoc --plugin typedoc-plugin-markdown",
+    "docDocbook": "asciidoctor -a ./node_modules/.bin/mmdc -r asciidoctor-diagram -b docbook5 doc/index.adoc -o docTmp/index.xml",
+    "docPdf": "asciidoctor-pdf -a ./node_modules/.bin/mmdc -r asciidoctor-diagram doc/index.adoc -o docTmp/index.pdf",
+    "format": "prettier --write \"{src,tests}/**/*.{js,ts,yml}\"",
+    "lint": "eslint \"{src,tests}/**/*.{js,ts}\"",
+    "ncc": "npm run build && npx ncc build ./dist/src/deployDocumentationAction.js -o action",
+    "onUpdate": "npx on-scripts-lib onUpdate",
+    "prestart": "npm run build",
+    "test": "npm run build && jest -c jest.config.js",
+    "test:only": "jest -c jest.config.js",
+    "docHelp": "echo '!!!!!!!!!!!!!!!! \\n To make the doc cmd work you need to raname node_modules/.bin/asciidoctor into something different \\n !!!!!!!!!!!!!!!!'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@onrunning/cil-base-lib": "1.5.9",
+    "@vercel/ncc": "0.34.0",
+    "dotenv": "16.0.3",
+    "rimraf": "3.0.2",
+    "typescript-json-schema": "0.54.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onrunning/cil-action-upload-document-to-confluence.git"
+  },
+  "files": [
+    "dist/src/**/*"
+  ],
+  "dependencies": {
+    "@actions/core": "1.10.0",
+    "@asciidoctor/docbook-converter": "2.0.0",
+    "ajv": "8.11.2",
+    "asciidoctor": "2.2.6",
+    "axios": "1.1.3",
+    "form-data": "4.0.0",
+    "mkdirp": "1.0.4",
+    "node-pandoc": "^0.3.0"
+  }
+}

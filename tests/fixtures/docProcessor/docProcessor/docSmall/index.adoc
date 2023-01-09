@@ -1,0 +1,8 @@
+== Doc Images
+This document contains images:
+
+image::images/aToB.svg[]
+
+image::images/screenshot.png[]
+
+image::images/subDir/bigger.svg[]

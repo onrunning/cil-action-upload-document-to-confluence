@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Doc Images</title>
+<date>2022-11-11</date>
+</info>
+<chapter xml:id="_doc_images">
+<title>Doc Images</title>
+<simpara>This document contains images:</simpara>
+<section xml:id="_detail">
+<title>Detail</title>
+<simpara>Some Text before the image</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="aToB.svg"/>
+</imageobject>
+<textobject><phrase>aToB</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Some Text after the image</simpara>
+<simpara>After the include we show a bigger image.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="subDir/bigger.svg"/>
+</imageobject>
+<textobject><phrase>bigger</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</section>
+</chapter>
+</book>

@@ -1,0 +1,32 @@
+== Paragraphs
+
+
+.Optional Title
+
+Usual
+paragraph.
+
+
+
+
+.Optional Title
+
+[source,perl]
+die 'connect: '.$dbh->errstr;
+
+
+
+.Optional Title
+NOTE: This is an example
+      single-paragraph note.
+
+
+
+.Optional Title
+[NOTE]
+This is an example
+single-paragraph note.
+
+
+
+WARNING: Warning.
